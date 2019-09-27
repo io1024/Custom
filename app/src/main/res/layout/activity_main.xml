@@ -4,11 +4,12 @@
         xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
+        android:orientation="vertical"
         android:layout_height="match_parent">
 
 
     <TextView
-          android:onClick="tvQuickIndex"
+            android:onClick="tvQuickIndex"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -19,7 +20,46 @@
             android:text="快速索引"
             android:textColor="#FF212121"
             android:textSize="16sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"/>
+
+
+    <com.zero.custom.view.ItemRelativeView
+            android:id="@+id/itemRelativeView"
+            android:layout_width="match_parent"
+            app:itemHeight="56dp"
+            app:leftDrawable="@mipmap/ic_launcher"
+            app:leftText="左边"
+            app:rightText="右边"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content"/>
+
+
+    <RelativeLayout
+            android:id="@+id/layoutProgress"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="66dp">
+
+        <com.zero.custom.view.CircleProgressBarView
+                android:layout_width="match_parent"
+                app:bar_width="9dp"
+                app:bg_color="#f6f6"
+                app:progress_color="#4D64FF"
+                app:start_angle="130"
+                app:sweep_angle="280"
+                android:layout_height="match_parent"/>
+
+        <com.zero.custom.view.CircleProgressBarView
+                android:id="@+id/circleView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:bar_width="11dp"
+                app:bg_color="#4D64FF"
+                app:progress_color="#4D64FF"
+                app:start_angle="130"
+                app:sweep_angle="200"/>
+    </RelativeLayout>
 
 
 </LinearLayout>

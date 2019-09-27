@@ -95,7 +95,6 @@ public class QuickIndexBar extends View {
 
             canvas.drawText(letter, x, y, paint);
         }
-
     }
 
     @Override

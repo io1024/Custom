@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--自定义属性数据类型简介-->
+    <!--① reference：参考指定Theme中资源ID。-->
+    <!--② Color：颜色-->
+    <!--③ boolean：布尔值-->
+    <!--④ dimension：尺寸值-->
+    <!--⑤ float：浮点型-->
+    <!--⑥ integer：整型-->
+    <!--⑦ string：字符串-->
+    <!--⑧ fraction：百分数-->
+    <!--⑨ enum：枚举-->
+    <!--⑩ flag：位或运算-->
+    <!--<declare-styleable name="自定义属性名称">-->
+    <!--<attr name="属性名称" format="属性类型"/>-->
+    <!--</declare-styleable>-->
+    <declare-styleable name="My">
+        <attr name="label" format="reference"/>
+        <attr name="textColor" format="color"/>
+        <attr name="isVisible" format="boolean"/>
+        <attr name="myWidth" format="dimension"/>
+        <attr name="fromAlpha" format="float"/>
+        <attr name="frameDuration" format="integer"/>
+        <attr name="Name" format="string"/>
+        <attr name="pivotX" format="fraction"/>
+        <attr name="language">
+            <enum name="English" value="1"/>
+        </attr>
+        <attr name="windowSoftInputMode">
+            <flag name="stateUnspecified" value="1"/>
+            <flag name="adjustNothing" value="0x30"/>
+        </attr>
+    </declare-styleable>
+
+    <!--属性定义时可以指定多种类型值-->
+    <!--<declare-styleable name="名称">-->
+        <!--<attr name="background" format="reference|color"/>-->
+    <!--</declare-styleable>-->
+
+    <!--————————————————————————————————————————分割线————————————————————————————————————————-->
+
+    <!--<declare-styleable name="自定义属性名称">-->
+    <!--<attr name="属性名称" format="属性类型" />-->
+    <declare-styleable name="ItemRelativeView">
+        <attr name="itemHeight" format="dimension"/>
+        <attr name="leftDrawable" format="reference"/>
+        <attr name="leftText" format="string"/>
+        <attr name="rightText" format="string"/>
+    </declare-styleable>
+
+
+    <declare-styleable name="CircleProgressBarView">
+        <attr name="progress_color" format="color"/>
+        <attr name="bg_color" format="color"/>
+        <attr name="bar_width" format="dimension"/>
+        <attr name="start_angle" format="float"/>
+        <attr name="sweep_angle" format="float"/>
+    </declare-styleable>
+
+
+</resources>

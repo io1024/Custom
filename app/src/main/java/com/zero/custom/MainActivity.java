@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import androidx.annotation.Nullable;
+import com.zero.custom.view.ItemRelativeView;
 
 /**
  * 首页
@@ -14,6 +15,9 @@ public class MainActivity extends BaseActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        ItemRelativeView itemRelativeView = findViewById(R.id.itemRelativeView);
+        itemRelativeView.setRightTextContent("右边边");
     }
 
 
