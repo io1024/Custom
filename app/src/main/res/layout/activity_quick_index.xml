@@ -16,4 +16,16 @@
             android:background="#F00"
             android:layout_height="match_parent"/>
 
+    <!--自定义一个Toast弹窗-->
+    <TextView android:layout_width="160dp"
+              android:layout_centerInParent="true"
+              android:text=""
+              android:id="@+id/tvToast"
+              android:visibility="gone"
+              android:gravity="center"
+              android:background="@drawable/shape_bg_index"
+              android:textColor="#FFFFFF"
+              android:textSize="26sp"
+              android:layout_height="100dp"/>
+
 </RelativeLayout>

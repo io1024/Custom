@@ -18,6 +18,8 @@ import android.view.View;
  * .    以 B 为例：1 索引
  * .            x轴坐标：float x = measuredWidth * 0.5f - textWidth * 0.5f (控件宽度的一半 - 单元格宽度的一半)
  * .            y轴坐标：float y = cellHeight * 0.5f + textWidth * 0.5f + i * cellHeight (控件宽度的一半 + 单元格宽度的一半 + 前面所有单元格的高度)
+ * <p>
+ * onTouchEvent 会导致界面重绘，进而引发 onDraw 被执行
  */
 public class QuickIndexBar extends View {
 
@@ -68,7 +70,7 @@ public class QuickIndexBar extends View {
         //设置加粗
         paint.setTypeface(Typeface.DEFAULT_BOLD);
         //设置字体大小
-        paint.setTextSize(18f);
+        paint.setTextSize(50);
     }
 
     @Override
@@ -87,6 +89,10 @@ public class QuickIndexBar extends View {
             //获取字母的宽度 和 paint.measureText(letter) 结果一样
             //int textWidth = rect.width();
             float y = cellHeight * 0.5f + textHeight * 0.5f + i * cellHeight;
+
+            //【改变选择字母】字母被选中时，重绘字母时，改变字母状态
+            paint.setColor(i == currentIndex ? Color.GRAY : Color.WHITE);
+
             canvas.drawText(letter, x, y, paint);
         }
 
@@ -118,8 +124,9 @@ public class QuickIndexBar extends View {
                 currentIndex = -1;
                 break;
         }
-        return true;
-        //返回true表示触摸事件被消费了
+        //【改变选择字母】该方法是重绘界面，会引发 onDraw 方法被调用
+        invalidate();
+        return true;//返回true表示触摸事件被消费了
     }
 
     private void getCurrentIndex(MotionEvent event) {
