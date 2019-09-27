@@ -12,6 +12,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.zero.custom.R;
 
+/**
+ * 自定义组合控件：RelativeLayout
+ */
 public class ItemRelativeView extends RelativeLayout {
 
     private float itemHeight; //定义的属性：itemHeight 值（控件高度）
